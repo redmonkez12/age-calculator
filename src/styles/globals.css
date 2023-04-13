@@ -2,26 +2,140 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #DBDBDB !important;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+#__next {
+  margin-top: 3rem;
+  padding: 3rem 1rem;
+}
+
+main {
+  width: 100%;
+  border-radius: 24px 24px 100px 24px;
+}
+
+.rectangle {
+  width: 1.8rem;
+  height: 0.75rem;
+  background-color: #854DFF;
+  border: 1px solid #000;
+  transform: skewX(-15deg);
+}
+
+#__next input {
+  padding: 0.5rem 1rem;
+  width: 87px;
+  height: 54px;
+  border: 1px solid #DCDCDC;
+  border-radius: 8px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: #151515;
+
+}
+
+#__next input::placeholder {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  color: #151515;
+  opacity: 0.5;
+}
+
+#__next label {
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 21px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #716F6F;
+}
+
+.mantine-TextInput-error {
+  color: #FF5959;
+  font-size: 14px;
+  line-height: 21px;
+  position: absolute;
+}
+
+#__next input[data-invalid="true"] {
+  border: 1px solid #FF5959;
+}
+
+.red {
+  color: #FF5959 !important;
+}
+
+.divider {
+  height: 1px;
+  background: #DCDCDC;
+  margin: 5rem 0 3rem 0;
+  position: relative;
+}
+
+.circle {
+  width: 96px;
+  height: 96px;
+  cursor: pointer;
+
+  background: #854DFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 50%;
+  top: 0;
+  transform: translate(0,-50%);
+}
+
+.circle:hover {
+  background: #151515;
+}
+
+@media screen and (min-width: 481px) {
+  #__next {
+    margin-top: 0;
+  }
+
+  main {
+    width: 840px;
+    border-radius: 24px 24px 200px 24px;
+  }
+
+  .circle {
+    right: 0;
+  }
+
+  .rectangle {
+    width: 3.625rem;
+    height: 1.5rem;
+  }
+
+  #__next input {
+    width: 10rem;
+    height: 4.5rem;
+    font-size: 2rem;
+    line-height: 48px;
+  }
+
+  #__next input::placeholder {
+    font-size: 2rem;
+  }
+
+  #__next label {
+    font-size: 14px;
+  }
+
+  .divider {
+    margin: 3rem 0;
+  }
 }
